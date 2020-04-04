@@ -1,8 +1,8 @@
 $(document).ready(function () {
-    $("#currentDay").append(moment().format("dddd, MMMM Do"));
-    renderLastMessage();
-    setHourBlockColor();
-    addDescription();
+    $("#currentDay").append(moment().format("dddd, MMMM Do")); //displaying current date
+    renderLastMessage();    //get the saved data from the local storage
+    setHourBlockColor();    //setting the color coded time-blocks
+    addDescription();       //adding events on to the time-blcoks
 
     function renderLastMessage() {
         $('input[type="text"]').each(function () {
@@ -11,7 +11,6 @@ $(document).ready(function () {
             $(this).val(value);
         });
     }
-
     function setHourBlockColor() {
         $("label").each(function () {
             console.log($(this).attr("value"));
@@ -37,6 +36,5 @@ $(document).ready(function () {
             renderLastMessage();
         })
     }
-
 });
 
