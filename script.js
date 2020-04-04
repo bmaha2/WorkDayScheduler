@@ -14,14 +14,11 @@ $(document).ready(function () {
 
     function setHourBlockColor() {
         $("label").each(function () {
-            // console.log($(this).attr("value"));
-            //console.log((moment().format("k").toUpperCase()));
-            if (moment().format("k") < 08 && moment().format("k") > 17) {
-                $(this).next().addClass("future");
-            }
-            if ($(this).attr("value") < moment().format("k")) {
+            console.log($(this).attr("value"));
+            console.log((moment().format("kk")));
+            if ($(this).attr("value") < moment().format("kk")) {
                 $(this).next().addClass("past");
-            } else if ($(this).attr("value") > moment().format("k")) {
+            } else if ($(this).attr("value") > moment().format("kk")) {
                 $(this).next().addClass("future");
             }
             else {
@@ -33,7 +30,6 @@ $(document).ready(function () {
         $(".saveBtn").click(function (e) {
             e.preventDefault();
             $('input[type="text"]').each(function () {
-
                 var id = $(this).attr("id");
                 var value = $(this).val();
                 localStorage.setItem(id, value);
